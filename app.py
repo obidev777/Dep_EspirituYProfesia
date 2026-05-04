@@ -96,7 +96,27 @@ def build_page(content, data=None):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Espiritu de Profecia - Mision Villa Perla</title>
+    <title>Departamento de Educación y Espíritu de Profecía - Misión Villa Perla</title>
+    <!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
+<meta property="og:description" content="Recursos educativos, videos, libros y materiales de estudio del Departamento de Espíritu de Profecía de la Misión Villa Perla.">
+<meta property="og:image" content="/favicon.ico">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://t.me/obisoftd3v">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Desarrollador @ObisoftDev!">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
+<meta name="twitter:description" content="Recursos educativos, videos, libros y materiales de estudio.">
+<meta name="twitter:image" content="/favicon.ico">
+
+<!-- WhatsApp específico -->
+<meta name="description" content="Departamento de Educación y Espíritu de Profecía de la Misión Villa Perla. Recursos, videos, libros y materiales de estudio.">
+<link rel="icon" type="image/png" href="/favicon.ico">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
