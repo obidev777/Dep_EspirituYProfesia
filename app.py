@@ -34,11 +34,11 @@ def init_data():
             'objetivos': '1. Distribuir libros del Espíritu de Profecía\n2. Organizar seminarios y talleres\n3. Capacitar líderes\n4. Promover la lectura diaria'
         },
         'informacion': {
-            'direccion': 'Misión Villa Perla, Calle Principal #123, Honduras',
-            'telefono': '+504 1234-5678',
-            'email': 'espirituprofecia@villaperla.org',
+            'direccion': 'Misión Villa Perla, Calle Principal',
+            'telefono': '+53 58604308',
+            'email': 'prjoseluisgzsantana@villaperla.org',
             'horario': 'Lunes a Viernes: 8:00 AM - 5:00 PM',
-            'coordinador': 'Pr. Juan Pérez',
+            'coordinador': 'Pr. Jose Luis Gonzales Santana',
             'facebook': 'https://facebook.com/espirituprofecia',
             'youtube': 'https://youtube.com/@espirituprofecia'
         },
