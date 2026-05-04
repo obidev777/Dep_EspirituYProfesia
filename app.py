@@ -101,7 +101,7 @@ def build_page(content, data=None):
     <!-- Open Graph / WhatsApp / Facebook -->
 <meta property="og:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
 <meta property="og:description" content="Recursos educativos, videos, libros y materiales de estudio del Departamento de Espíritu de Profecía de la Misión Villa Perla.">
-<meta property="og:image" content="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png">
+
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:domain" content="raw.githubusercontent.com">
@@ -109,16 +109,18 @@ def build_page(content, data=None):
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Desarrollador @ObisoftDev!">
 
+<meta property="og:image" content="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png?v=2">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png?v=2">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png?v=2">
+
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="raw.githubusercontent.com">
 <meta name="twitter:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
 <meta name="twitter:description" content="Recursos educativos, videos, libros y materiales de estudio.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png">
 
 <!-- WhatsApp específico -->
 <meta name="description" content="Departamento de Educación y Espíritu de Profecía de la Misión Villa Perla. Recursos, videos, libros y materiales de estudio.">
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
