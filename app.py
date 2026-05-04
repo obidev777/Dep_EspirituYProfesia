@@ -97,18 +97,21 @@ def build_page(content, data=None):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Departamento de Educación y Espíritu de Profecía - Misión Villa Perla</title>
+
     <!-- Open Graph / WhatsApp / Facebook -->
 <meta property="og:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
 <meta property="og:description" content="Recursos educativos, videos, libros y materiales de estudio del Departamento de Espíritu de Profecía de la Misión Villa Perla.">
 <meta property="og:image" content="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:domain" content="raw.githubusercontent.com">
 <meta property="og:url" content="https://t.me/obisoftd3v">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Desarrollador @ObisoftDev!">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="raw.githubusercontent.com">
 <meta name="twitter:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
 <meta name="twitter:description" content="Recursos educativos, videos, libros y materiales de estudio.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/obidev777/Dep_EspirituYProfesia/main/static/logo.png">
