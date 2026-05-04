@@ -1,5 +1,5 @@
 # app.py - Sistema Espíritu de Profecía Misión Villa Perla
-from flask import Flask, render_template_string, request, redirect, url_for, session, get_flashed_messages
+from flask import Flask, render_template_string, request, redirect, url_for, session, get_flashed_messages , send_from_directory
 from functools import wraps
 from datetime import datetime
 import json, os
@@ -664,7 +664,7 @@ footer {
 <header>
     <div class="header-content">
         <a href="''' + url_for('index') + '''" class="logo">
-            <i class="fas fa-book-open logo-icon"></i>
+            <img src="/static/logo.png" alt="Logo" style="width:50px;height:50px">
             <div class="logo-text">
                 <h1>Espiritu de Profecia</h1>
                 <p>Mision Villa Perla</p>
@@ -1094,6 +1094,10 @@ def favicon():
     # Si no existe, devuelve un icono vacío para evitar error 404
     from flask import Response
     return Response('', status=204)
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
 
 if __name__ == '__main__':
     if not os.path.exists(DATA_FILE):
