@@ -100,7 +100,7 @@ def build_page(content, data=None):
     <!-- Open Graph / WhatsApp / Facebook -->
 <meta property="og:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
 <meta property="og:description" content="Recursos educativos, videos, libros y materiales de estudio del Departamento de Espíritu de Profecía de la Misión Villa Perla.">
-<meta property="og:image" content="/favicon.ico">
+<meta property="og:image" content="https://github.com/obidev777/Dep_EspirituYProfesia/blob/main/static/logo.png?raw=true">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://t.me/obisoftd3v">
@@ -111,11 +111,11 @@ def build_page(content, data=None):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Departamento de Educación y Espíritu de Profecía - Misión Villa Perla">
 <meta name="twitter:description" content="Recursos educativos, videos, libros y materiales de estudio.">
-<meta name="twitter:image" content="/favicon.ico">
+<meta name="twitter:image" content="https://github.com/obidev777/Dep_EspirituYProfesia/blob/main/static/logo.png?raw=true">
 
 <!-- WhatsApp específico -->
 <meta name="description" content="Departamento de Educación y Espíritu de Profecía de la Misión Villa Perla. Recursos, videos, libros y materiales de estudio.">
-<link rel="icon" type="image/png" href="/favicon.ico">
+<link rel="icon" type="image/png" href="https://github.com/obidev777/Dep_EspirituYProfesia/blob/main/static/logo.png?raw=true">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
