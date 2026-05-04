@@ -1,0 +1,56 @@
+{
+  "recursos": [],
+  "videos": [
+    {
+      "titulo": "Xiaomi",
+      "descripcion": "ajskdasd",
+      "categoria": "Líderes",
+      "url": "https://www.youtube.com/watch?v=T_vrSxzrIts&t=1s",
+      "fecha": "2026-05-04"
+    }
+  ],
+  "noticias": [],
+  "eventos": [
+    {
+      "titulo": "NUevo evento",
+      "fecha": "16 Septiembre Congreso Juvenil",
+      "hora": "8:30 AM",
+      "lugar": "Santa Clara",
+      "descripcion": "ajkdasjdjkas",
+      "url": ""
+    }
+  ],
+  "libro_ano": {
+    "titulo": "El Conflicto de los Siglos",
+    "autor": "Elena G. de White",
+    "descripcion": "Una obra monumental que traza la historia del gran conflicto entre el bien y el mal desde sus orígenes hasta su culminación.",
+    "url": "https://www.ejemplo.com/libro.pdf",
+    "cuestionario_url": "https://www.ejemplo.com/cuestionario.pdf"
+  },
+  "quienes_somos": {
+    "titulo": "Departamento de Espíritu de Profecía",
+    "historia": "El Departamento de Espíritu de Profecía de la Misión Villa Perla fue establecido con el propósito de promover el estudio y la difusión de los escritos inspirados de Elena G. de White.",
+    "mision": "Fomentar el estudio diario de la Biblia y los escritos del Espíritu de Profecía, promoviendo un avivamiento y reforma espiritual.",
+    "vision": "Cada miembro de iglesia arraigado en la Palabra de Dios y el Espíritu de Profecía, preparándose para la segunda venida de Cristo.",
+    "objetivos": "1. Distribuir libros del Espíritu de Profecía\n2. Organizar seminarios y talleres\n3. Capacitar líderes\n4. Promover la lectura diaria"
+  },
+  "informacion": {
+    "direccion": "Misión Villa Perla, Calle Principal #123, Honduras",
+    "telefono": "+504 1234-5678",
+    "email": "espirituprofecia@villaperla.org",
+    "horario": "Lunes a Viernes: 8:00 AM - 5:00 PM",
+    "coordinador": "Pr. Juan Pérez",
+    "facebook": "https://facebook.com/espirituprofecia",
+    "youtube": "https://youtube.com/@espirituprofecia"
+  },
+  "categorias_recursos": [
+    "Infantil",
+    "Adolescentes",
+    "Jóvenes",
+    "Adultos",
+    "Matrimonios",
+    "Familias",
+    "Líderes",
+    "Escuela Sabática"
+  ]
+}

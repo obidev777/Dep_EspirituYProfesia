@@ -1084,6 +1084,17 @@ def admin_categorias():
     c += '<div class="card"><h3>Lista (' + str(len(data['categorias_recursos'])) + ')</h3><div class="grid">' + (cards or '<p style="text-align:center;color:var(--gray-600)">Sin categorias</p>') + '</div></div>'
     return render_template_string(build_page(c, data), data=data)
 
+@app.route('/favicon.ico')
+def favicon():
+    # Busca el archivo favicon.ico en la misma carpeta que app.py
+    favicon_path = os.path.join(app.root_path, 'favicon.ico')
+    if os.path.exists(favicon_path):
+        from flask import send_file
+        return send_file(favicon_path, mimetype='image/x-icon')
+    # Si no existe, devuelve un icono vacío para evitar error 404
+    from flask import Response
+    return Response('', status=204)
+
 if __name__ == '__main__':
     if not os.path.exists(DATA_FILE):
         save_data(init_data())
