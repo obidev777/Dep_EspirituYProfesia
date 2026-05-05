@@ -129,8 +129,8 @@ def build_page(content, data=None):
     --orange: #E8751A;
     --orange-dark: #C45D0E;
     --orange-light: #F4984A;
-    --black: #1A1A1A;
-    --black-light: #2D2D2D;
+    --black: #333333;
+    --black-light: #4A4A4A;
     --white: #FFFFFF;
     --gray-50: #FAFAFA;
     --gray-100: #F5F5F5;
@@ -651,6 +651,65 @@ footer {
 @media (min-width: 769px) {
     .sidebar, .sidebar-overlay { display: none !important; }
 }
+
+.btn-black { background: var(--black); border-color: var(--black); }
+.btn-black:hover { background: var(--black-light); }
+
+.top-bar {
+    background: #2D2D2D;
+}
+
+.hero {
+    background: #3A3A3A;
+}
+
+footer {
+    background: #2D2D2D;
+}
+
+th {
+    background: #3A3A3A;
+}
+
+.badge {
+    background: #444444;
+}
+.video-thumb {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.video-thumb img {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s;
+}
+.video-thumb:hover img {
+    transform: scale(1.03);
+}
+.play-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+.play-overlay:hover {
+    background: rgba(0,0,0,0.5);
+}
+.play-overlay i {
+    font-size: 4rem;
+    color: white;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.play-overlay:hover i {
+    color: var(--orange);
+    opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -801,7 +860,27 @@ def videos():
         if vids:
             items += '<div class="card"><h3>' + cat + '</h3>'
             for v in vids:
-                items += '<div class="resource-item"><h4>' + v['titulo'] + '</h4><span class="badge">' + v['categoria'] + '</span><div class="resource-meta"><span><i class="fas fa-calendar"></i> ' + v['fecha'] + '</span></div><p>' + v['descripcion'] + '</p><div class="video-wrapper"><iframe src="' + v['url'] + '" allowfullscreen></iframe></div></div>'
+                vid_id = ''
+                if 'youtube.com/embed/' in v['url']:
+                    vid_id = v['url'].split('youtube.com/embed/')[-1].split('?')[0]
+                elif 'youtu.be/' in v['url']:
+                    vid_id = v['url'].split('youtu.be/')[-1].split('?')[0]
+                elif 'watch?v=' in v['url']:
+                    vid_id = v['url'].split('watch?v=')[-1].split('&')[0]
+
+                thumbnail = 'https://img.youtube.com/vi/' + vid_id + '/hqdefault.jpg' if vid_id else ''
+                watch_url = 'https://www.youtube.com/watch?v=' + vid_id if vid_id else v['url']
+
+                items += '<div class="resource-item"><h4>' + v['titulo'] + '</h4><span class="badge">' + v['categoria'] + '</span><div class="resource-meta"><span><i class="fas fa-calendar"></i> ' + v['fecha'] + '</span></div><p>' + v['descripcion'] + '</p>'
+                items += '<div class="video-thumb">'
+                if thumbnail:
+                    items += '<img src="' + thumbnail + '" alt="' + v['titulo'] + '" style="width:100%;border-radius:8px;cursor:pointer" onclick="window.open(\'' + watch_url + '\',\'_blank\')">'
+                    items += '<div class="play-overlay" onclick="window.open(\'' + watch_url + '\',\'_blank\')"><i class="fas fa-play-circle"></i></div>'
+                else:
+                    items += '<div class="video-wrapper"><iframe src="' + v['url'] + '" allowfullscreen></iframe></div>'
+                items += '</div>'
+                items += '<a href="' + watch_url + '" target="_blank" class="btn btn-sm" style="margin-top:10px"><i class="fas fa-play"></i> Ver Video en YouTube</a>'
+                items += '</div>'
             items += '</div>'
     c = '<div class="card"><h2>Biblioteca de Videos</h2><p>Sermones, seminarios y estudios biblicos en video.</p></div>' + (items or '<div class="card"><p style="text-align:center;color:var(--gray-600)">No hay videos disponibles.</p></div>')
     return render_template_string(build_page(c, data), data=data)
