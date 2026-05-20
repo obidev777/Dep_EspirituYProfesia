@@ -65,7 +65,7 @@ def build_page(content, data=None):
         ('quienes_somos','Quienes Somos','users'),
         ('recursos','Recursos','file-pdf'),
         ('videos','Videos','video'),
-        ('libro_ano','Libro del Ano','book'),
+        ('libro_ano','Libro del Año','book'),
         ('eventos','Eventos','calendar'),
         ('contacto','Contacto','address-card')
     ]
@@ -730,8 +730,8 @@ th {
         <a href="''' + url_for('index') + '''" class="logo">
             <img src="/static/logo.png" alt="Logo" style="width:50px;height:50px">
             <div class="logo-text">
-                <h1>Espiritu de Profecia</h1>
-                <p>Mision Villa Perla</p>
+                <h1>Espíritu de Profecía</h1>
+                <p>Misión Villa Perla</p>
             </div>
         </a>
         <nav class="nav-desktop"><ul>''' + nav_desktop + '''</ul></nav>
@@ -765,7 +765,7 @@ th {
             <h3>Secciones</h3>
             <a href="''' + url_for('recursos') + '''">Recursos PDF</a>
             <a href="''' + url_for('videos') + '''">Videos</a>
-            <a href="''' + url_for('libro_ano') + '''">Libro del Ano</a>
+            <a href="''' + url_for('libro_ano') + '''">Libro del Año</a>
             <a href="''' + url_for('eventos') + '''">Eventos</a>
         </div>
         <div class="footer-section">
@@ -776,7 +776,7 @@ th {
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; ''' + str(datetime.now().year) + ''' Espiritu de Profecia - Mision Villa Perla.</p>
+        <p>&copy; ''' + str(datetime.now().year) + ''' Espíritu de Profecía - Misión Villa Perla.</p>
     </div>
 </footer>
 
@@ -803,7 +803,7 @@ def index():
     for e in data['eventos'][:3]:
         ev += '<div class="resource-item"><h4>' + e['titulo'] + '</h4><div class="resource-meta"><span><i class="fas fa-calendar"></i> ' + e['fecha'] + '</span><span><i class="fas fa-map-marker-alt"></i> ' + e['lugar'] + '</span></div><p>' + e['descripcion'][:120] + '...</p></div>'
     
-    c = '<div class="hero"><h1>Departamento de<br><span class="accent">Espiritu de Profecia</span></h1><p>Promoviendo el estudio de los escritos inspirados en la Mision Villa Perla</p><div style="margin-top:2rem"><a href="' + url_for('recursos') + '" class="btn btn-lg">Explorar Recursos</a> <a href="' + url_for('quienes_somos') + '" class="btn btn-outline btn-lg">Conocenos</a></div></div>'
+    c = '<div class="hero"><h1>Departamento de<br><span class="accent">Espíritu de Profecía</span></h1><p>Promoviendo el estudio de los escritos inspirados en la Mision Villa Perla</p><div style="margin-top:2rem"><a href="' + url_for('recursos') + '" class="btn btn-lg">Explorar Recursos</a> <a href="' + url_for('quienes_somos') + '" class="btn btn-outline btn-lg">Conocenos</a></div></div>'
     
     c += '<div class="grid g4">'
     c += '<div class="card stat-card fade"><p class="stat-number">' + str(len(data['recursos'])) + '</p><p class="stat-label">Recursos</p></div>'
@@ -815,7 +815,7 @@ def index():
     c += '<div class="grid g2">'
     c += '<div class="card fade"><h2>Recursos PDF</h2><p>Materiales de estudio organizados por categorias para descargar.</p><a href="' + url_for('recursos') + '" class="btn btn-sm">Ver Recursos</a></div>'
     c += '<div class="card fade"><h2>Videos</h2><p>Sermones, seminarios y estudios biblicos en video.</p><a href="' + url_for('videos') + '" class="btn btn-sm">Ver Videos</a></div>'
-    c += '<div class="card fade" style="border-top:4px solid var(--orange)"><h2>Libro del Ano</h2><p><strong>' + (data['libro_ano']['titulo'] or 'Proximamente') + '</strong></p><a href="' + url_for('libro_ano') + '" class="btn btn-outline btn-sm">Ver Libro</a></div>'
+    c += '<div class="card fade" style="border-top:4px solid var(--orange)"><h2>Libro del Año</h2><p><strong>' + (data['libro_ano']['titulo'] or 'Proximamente') + '</strong></p><a href="' + url_for('libro_ano') + '" class="btn btn-outline btn-sm">Ver Libro</a></div>'
     c += '<div class="card fade"><h2>Eventos</h2><p>Calendario de actividades del departamento.</p><a href="' + url_for('eventos') + '" class="btn btn-sm">Ver Eventos</a></div>'
     c += '</div>'
     
@@ -889,14 +889,14 @@ def videos():
 def libro_ano():
     data = load_data()
     lb = data['libro_ano']
-    c = '<div class="card" style="border-top:4px solid var(--orange);border-left:4px solid var(--orange)"><h2>Libro del Ano ' + str(datetime.now().year) + '</h2>'
+    c = '<div class="card" style="border-top:4px solid var(--orange);border-left:4px solid var(--orange)"><h2>Libro del Año ' + str(datetime.now().year) + '</h2>'
     if lb['titulo']:
         c += '<h3 style="font-size:1.6rem;color:var(--orange)">' + lb['titulo'] + '</h3><p><strong>Autor:</strong> ' + lb['autor'] + '</p><p style="white-space:pre-line;line-height:1.8;margin:1.5rem 0">' + lb['descripcion'] + '</p><div style="display:flex;gap:1rem;flex-wrap:wrap">'
         if lb.get('url'): c += '<a href="' + lb['url'] + '" target="_blank" class="btn btn-lg">Descargar Libro</a>'
-        if lb.get('cuestionario_url'): c += '<a href="' + lb['cuestionario_url'] + '" target="_blank" class="btn btn-outline btn-lg">Descargar Cuestionario</a>'
+        if lb.get('cuestionario_url'): c += '<a href="' + lb['cuestionario_url'] + '" target="_blank" class="btn btn-outline btn-lg">Hacer Cuestionario</a>'
         c += '</div>'
     else:
-        c += '<p style="text-align:center;padding:3rem;color:var(--gray-600);font-size:1.2rem">El libro del ano sera publicado proximamente.</p>'
+        c += '<p style="text-align:center;padding:3rem;color:var(--gray-600);font-size:1.2rem">El libro del año sera publicado proximamente.</p>'
     c += '</div>'
     return render_template_string(build_page(c, data), data=data)
 
@@ -923,7 +923,6 @@ def contacto():
     c += '<p style="margin:1rem 0"><i class="fas fa-clock" style="color:var(--orange);margin-right:10px"></i> ' + info['horario'] + '</p>'
     c += '<p style="margin:1rem 0"><i class="fas fa-user-tie" style="color:var(--orange);margin-right:10px"></i> Coordinador: ' + info['coordinador'] + '</p>'
     c += '</div>'
-    c += '<div class="card"><h3>Envianos un Mensaje</h3><form onsubmit="event.preventDefault();this.insertAdjacentHTML(\'afterend\',\'<div class="alert alert-success" style="margin-top:1rem">Mensaje enviado. Te contactaremos pronto.</div>\');this.reset()"><div class="form-group"><label>Nombre</label><input type="text" required></div><div class="form-group"><label>Email</label><input type="email" required></div><div class="form-group"><label>Mensaje</label><textarea required></textarea></div><button type="submit" class="btn">Enviar Mensaje</button></form></div>'
     c += '</div>'
     return render_template_string(build_page(c, data), data=data)
 
@@ -951,8 +950,8 @@ def admin_dashboard():
     nav_links = [
         ("admin_dashboard","Dashboard"),("admin_quienes_somos","Quienes Somos"),
         ("admin_recursos","Recursos"),("admin_videos","Videos"),
-        ("admin_libro_ano","Libro del Ano"),("admin_eventos","Eventos"),
-        ("admin_info","Informacion"),("admin_categorias","Categorias")
+        ("admin_libro_ano","Libro del Año"),("admin_eventos","Eventos"),
+        ("admin_info","Informacion"),("admin_categorias","Categorías")
     ]
     n = '<div class="admin-nav">'
     for r, t in nav_links:
@@ -1077,7 +1076,7 @@ def admin_libro_ano():
         from flask import flash; flash('Libro actualizado', 'success')
         return redirect(url_for('admin_libro_ano'))
     lb = data['libro_ano']
-    c = '<div class="card"><h2>Libro del Ano</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_libro_ano') + '" class="active">Libro del Ano</a></div><div class="card"><form method="POST">'
+    c = '<div class="card"><h2>Libro del Año</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_libro_ano') + '" class="active">Libro del Año</a></div><div class="card"><form method="POST">'
     for k in ['titulo','autor','descripcion','url','cuestionario_url']:
         c += '<div class="form-group"><label>' + k.title() + '</label>'
         if k == 'descripcion':
