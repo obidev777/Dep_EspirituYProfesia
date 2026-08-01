@@ -18,22 +18,22 @@ def init_data():
         'eventos': [],
         'libro_ano': {'titulo':'','autor':'','descripcion':'','url':'','cuestionario_url':''},
         'quienes_somos': {
-            'titulo':'Departamento de Espiritu de Profecia',
-            'historia':'El Departamento de Espiritu de Profecia de la Mision Villa Perla fue establecido para promover el estudio y la difusion de los escritos inspirados de Elena G. de White.',
-            'mision':'Fomentar el estudio diario de la Biblia y los escritos del Espiritu de Profecia.',
-            'vision':'Cada miembro arraigado en la Palabra de Dios y el Espiritu de Profecia.',
-            'objetivos':'1. Distribuir libros del Espiritu de Profecia\n2. Organizar seminarios y talleres\n3. Capacitar lideres\n4. Promover la lectura diaria'
+            'titulo':'Departamento de Espíritu de Profecía',
+            'historia':'El Departamento de Espíritu de Profecía de la Misión Villa Perla fue establecido para promover el estudio y la difusión de los escritos inspirados de Elena G. de White.',
+            'mision':'Fomentar el estudio diario de la Biblia y los escritos del Espíritu de Profecía.',
+            'vision':'Cada miembro arraigado en la Palabra de Dios y el Espíritu de Profecía.',
+            'objetivos':'1. Distribuir libros del Espíritu de Profecía\n2. Organizar seminarios y talleres\n3. Capacitar líderes\n4. Promover la lectura diaria'
         },
         'informacion': {
-            'direccion':'Mision Villa Perla, Calle Principal #123',
+            'direccion':'Misión Villa Perla, Calle Principal #123',
             'telefono':'+53 58604308',
             'email':'prluisgzsantana@villaperla.org',
             'horario':'Lunes a Viernes: 8:00 AM - 5:00 PM',
-            'coordinador':'Pr. Jose Luis Gonzales Santana',
+            'coordinador':'Pr. José Luis González Santana',
             'facebook':'',
             'youtube':''
         },
-        'categorias_recursos': ['Infantil','Adolescentes','Jovenes','Adultos','Matrimonios','Familias','Lideres','Escuela Sabatica']
+        'categorias_recursos': ['Infantil','Adolescentes','Jóvenes','Adultos','Matrimonios','Familias','Líderes','Escuela Sabática']
     }
 
 def load_data():
@@ -62,7 +62,7 @@ def build_page(content, data=None):
     
     nav_items = [
         ('index','Inicio','home'),
-        ('quienes_somos','Quienes Somos','users'),
+        ('quienes_somos','Quiénes Somos','users'),
         ('recursos','Recursos','file-pdf'),
         ('videos','Videos','video'),
         ('libro_ano','Libro del Año','book'),
@@ -753,8 +753,8 @@ th {
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Espiritu de Profecia</h3>
-            <p>Departamento dedicado a promover el estudio de los escritos inspirados en la Mision Villa Perla.</p>
+            <h3>Espíritu de Profecía</h3>
+            <p>Departamento dedicado a promover el estudio de los escritos inspirados en la Misión Villa Perla.</p>
             <div class="social-icons">
                 <a href="''' + info.get('facebook','#') + '''"><i class="fab fa-facebook-f"></i></a>
                 <a href="''' + info.get('youtube','#') + '''"><i class="fab fa-youtube"></i></a>
@@ -803,23 +803,23 @@ def index():
     for e in data['eventos'][:3]:
         ev += '<div class="resource-item"><h4>' + e['titulo'] + '</h4><div class="resource-meta"><span><i class="fas fa-calendar"></i> ' + e['fecha'] + '</span><span><i class="fas fa-map-marker-alt"></i> ' + e['lugar'] + '</span></div><p>' + e['descripcion'][:120] + '...</p></div>'
     
-    c = '<div class="hero"><h1>Departamento de<br><span class="accent">Espíritu de Profecía</span></h1><p>Promoviendo el estudio de los escritos inspirados en la Mision Villa Perla</p><div style="margin-top:2rem"><a href="' + url_for('recursos') + '" class="btn btn-lg">Explorar Recursos</a> <a href="' + url_for('quienes_somos') + '" class="btn btn-outline btn-lg">Conocenos</a></div></div>'
+    c = '<div class="hero"><h1>Departamento de<br><span class="accent">Espíritu de Profecía</span></h1><p>Promoviendo el estudio de los escritos inspirados en la Misión Villa Perla</p><div style="margin-top:2rem"><a href="' + url_for('recursos') + '" class="btn btn-lg">Explorar Recursos</a> <a href="' + url_for('quienes_somos') + '" class="btn btn-outline btn-lg">Conócenos</a></div></div>'
     
     c += '<div class="grid g4">'
     c += '<div class="card stat-card fade"><p class="stat-number">' + str(len(data['recursos'])) + '</p><p class="stat-label">Recursos</p></div>'
     c += '<div class="card stat-card fade"><p class="stat-number">' + str(len(data['videos'])) + '</p><p class="stat-label">Videos</p></div>'
     c += '<div class="card stat-card fade"><p class="stat-number">' + str(len(data['eventos'])) + '</p><p class="stat-label">Eventos</p></div>'
-    c += '<div class="card stat-card fade"><p class="stat-number">' + str(len(data['categorias_recursos'])) + '</p><p class="stat-label">Categorias</p></div>'
+    c += '<div class="card stat-card fade"><p class="stat-number">' + str(len(data['categorias_recursos'])) + '</p><p class="stat-label">Categorías</p></div>'
     c += '</div>'
     
     c += '<div class="grid g2">'
-    c += '<div class="card fade"><h2>Recursos PDF</h2><p>Materiales de estudio organizados por categorias para descargar.</p><a href="' + url_for('recursos') + '" class="btn btn-sm">Ver Recursos</a></div>'
-    c += '<div class="card fade"><h2>Videos</h2><p>Sermones, seminarios y estudios biblicos en video.</p><a href="' + url_for('videos') + '" class="btn btn-sm">Ver Videos</a></div>'
-    c += '<div class="card fade" style="border-top:4px solid var(--orange)"><h2>Libro del Año</h2><p><strong>' + (data['libro_ano']['titulo'] or 'Proximamente') + '</strong></p><a href="' + url_for('libro_ano') + '" class="btn btn-outline btn-sm">Ver Libro</a></div>'
+    c += '<div class="card fade"><h2>Recursos PDF</h2><p>Materiales de estudio organizados por categorías para descargar.</p><a href="' + url_for('recursos') + '" class="btn btn-sm">Ver Recursos</a></div>'
+    c += '<div class="card fade"><h2>Videos</h2><p>Sermones, seminarios y estudios bíblicos en video.</p><a href="' + url_for('videos') + '" class="btn btn-sm">Ver Videos</a></div>'
+    c += '<div class="card fade" style="border-top:4px solid var(--orange)"><h2>Libro del Año</h2><p><strong>' + (data['libro_ano']['titulo'] or 'Próximamente') + '</strong></p><a href="' + url_for('libro_ano') + '" class="btn btn-outline btn-sm">Ver Libro</a></div>'
     c += '<div class="card fade"><h2>Eventos</h2><p>Calendario de actividades del departamento.</p><a href="' + url_for('eventos') + '" class="btn btn-sm">Ver Eventos</a></div>'
     c += '</div>'
     
-    c += '<div class="card fade"><h2>Proximos Eventos</h2><div class="grid">' + (ev or '<p style="text-align:center;color:var(--gray-600)">No hay eventos programados.</p>') + '</div></div>'
+    c += '<div class="card fade"><h2>Próximos Eventos</h2><div class="grid">' + (ev or '<p style="text-align:center;color:var(--gray-600)">No hay eventos programados.</p>') + '</div></div>'
     
     return render_template_string(build_page(c, data), data=data)
 
@@ -830,10 +830,10 @@ def quienes_somos():
     c = '<div class="card"><h2>' + q['titulo'] + '</h2></div>'
     c += '<div class="grid g2">'
     c += '<div class="card"><h3>Nuestra Historia</h3><p style="white-space:pre-line;line-height:1.8">' + q['historia'] + '</p></div>'
-    c += '<div class="card"><h3>Mision</h3><p style="font-size:1.1rem;line-height:1.8">' + q['mision'] + '</p><h3 style="margin-top:1.5rem">Vision</h3><p style="font-size:1.1rem;line-height:1.8">' + q['vision'] + '</p></div>'
+    c += '<div class="card"><h3>Misión</h3><p style="font-size:1.1rem;line-height:1.8">' + q['mision'] + '</p><h3 style="margin-top:1.5rem">Visión</h3><p style="font-size:1.1rem;line-height:1.8">' + q['vision'] + '</p></div>'
     c += '</div>'
     c += '<div class="card"><h3>Objetivos</h3><p style="white-space:pre-line;line-height:2;font-size:1.05rem">' + q['objetivos'] + '</p></div>'
-    c += '<div class="card" style="border-left:4px solid var(--orange);background:var(--gray-50)"><h3>Base Biblica</h3><p style="font-style:italic;font-size:1.1rem">"Y el dragon se lleno de ira contra la mujer; y se fue a hacer guerra contra el resto de la descendencia de ella, los que guardan los mandamientos de Dios y tienen el testimonio de Jesucristo." - Apocalipsis 12:17</p></div>'
+    c += '<div class="card" style="border-left:4px solid var(--orange);background:var(--gray-50)"><h3>Base Bíblica</h3><p style="font-style:italic;font-size:1.1rem">"Y el dragón se llenó de ira contra la mujer; y se fue a hacer guerra contra el resto de la descendencia de ella, los que guardan los mandamientos de Dios y tienen el testimonio de Jesucristo." - Apocalipsis 12:17</p></div>'
     c += '<div class="card"><h3>Coordinador</h3><p style="font-size:1.2rem"><strong>' + data['informacion']['coordinador'] + '</strong></p><p class="resource-meta"><i class="fas fa-phone"></i> ' + data['informacion']['telefono'] + ' <span style="margin:0 10px">|</span> <i class="fas fa-envelope"></i> ' + data['informacion']['email'] + '</p></div>'
     return render_template_string(build_page(c, data), data=data)
 
@@ -882,7 +882,7 @@ def videos():
                 items += '<a href="' + watch_url + '" target="_blank" class="btn btn-sm" style="margin-top:10px"><i class="fas fa-play"></i> Ver Video en YouTube</a>'
                 items += '</div>'
             items += '</div>'
-    c = '<div class="card"><h2>Biblioteca de Videos</h2><p>Sermones, seminarios y estudios biblicos en video.</p></div>' + (items or '<div class="card"><p style="text-align:center;color:var(--gray-600)">No hay videos disponibles.</p></div>')
+    c = '<div class="card"><h2>Biblioteca de Videos</h2><p>Sermones, seminarios y estudios bíblicos en video.</p></div>' + (items or '<div class="card"><p style="text-align:center;color:var(--gray-600)">No hay videos disponibles.</p></div>')
     return render_template_string(build_page(c, data), data=data)
 
 @app.route('/libro-del-ano')
@@ -906,7 +906,7 @@ def eventos():
     items = ''
     for e in data['eventos']:
         items += '<div class="card"><h3>' + e['titulo'] + '</h3><div class="resource-meta"><span><i class="fas fa-calendar"></i> ' + e['fecha'] + '</span><span><i class="fas fa-clock"></i> ' + e['hora'] + '</span><span><i class="fas fa-map-marker-alt"></i> ' + e['lugar'] + '</span></div><p style="white-space:pre-line;margin-top:1rem">' + e['descripcion'] + '</p>'
-        if e.get('url'): items += '<a href="' + e['url'] + '" target="_blank" class="btn btn-outline btn-sm" style="margin-top:1rem">Mas Informacion</a>'
+        if e.get('url'): items += '<a href="' + e['url'] + '" target="_blank" class="btn btn-outline btn-sm" style="margin-top:1rem">Más Información</a>'
         items += '</div>'
     c = '<div class="card"><h2>Calendario de Eventos</h2></div>' + (items or '<div class="card"><p style="text-align:center;color:var(--gray-600)">No hay eventos programados.</p></div>')
     return render_template_string(build_page(c, data), data=data)
@@ -931,16 +931,16 @@ def login():
     if request.method == 'POST':
         if check_password_hash(ADMIN_PASSWORD, request.form['password']):
             session['admin_logged_in'] = True
-            from flask import flash; flash('Inicio de sesion exitoso', 'success')
+            from flask import flash; flash('Inicio de sesión exitoso', 'success')
             return redirect(url_for('admin_dashboard'))
-        from flask import flash; flash('Contrasena incorrecta', 'error')
-    c = '<div class="card" style="max-width:450px;margin:4rem auto"><h2>Acceso Administrativo</h2><form method="POST"><div class="form-group"><label>Contrasena</label><input type="password" name="password" required></div><button type="submit" class="btn" style="width:100%;justify-content:center">Iniciar Sesion</button></form></div>'
+        from flask import flash; flash('Contraseña incorrecta', 'error')
+    c = '<div class="card" style="max-width:450px;margin:4rem auto"><h2>Acceso Administrativo</h2><form method="POST"><div class="form-group"><label>Contraseña</label><input type="password" name="password" required></div><button type="submit" class="btn" style="width:100%;justify-content:center">Iniciar Sesión</button></form></div>'
     return render_template_string(build_page(c), data=load_data())
 
 @app.route('/logout')
 def logout():
     session.pop('admin_logged_in', None)
-    from flask import flash; flash('Sesion cerrada', 'success')
+    from flask import flash; flash('Sesión cerrada', 'success')
     return redirect(url_for('index'))
 
 @app.route('/admin')
@@ -948,10 +948,10 @@ def logout():
 def admin_dashboard():
     data = load_data()
     nav_links = [
-        ("admin_dashboard","Dashboard"),("admin_quienes_somos","Quienes Somos"),
+        ("admin_dashboard","Dashboard"),("admin_quienes_somos","Quiénes Somos"),
         ("admin_recursos","Recursos"),("admin_videos","Videos"),
         ("admin_libro_ano","Libro del Año"),("admin_eventos","Eventos"),
-        ("admin_info","Informacion"),("admin_categorias","Categorías")
+        ("admin_info","Información"),("admin_categorias","Categorías")
     ]
     n = '<div class="admin-nav">'
     for r, t in nav_links:
@@ -960,10 +960,10 @@ def admin_dashboard():
     n += '</div>'
     
     s = ''
-    for v, l in [(len(data['recursos']),'Recursos'),(len(data['videos']),'Videos'),(len(data['eventos']),'Eventos'),(len(data['categorias_recursos']),'Categorias')]:
+    for v, l in [(len(data['recursos']),'Recursos'),(len(data['videos']),'Videos'),(len(data['eventos']),'Eventos'),(len(data['categorias_recursos']),'Categorías')]:
         s += '<div class="card stat-card"><p class="stat-number">' + str(v) + '</p><p class="stat-label">' + l + '</p></div>'
     
-    c = '<div class="card"><h2>Panel de Administracion</h2></div>' + n + '<div class="grid g4">' + s + '</div>'
+    c = '<div class="card"><h2>Panel de Administración</h2></div>' + n + '<div class="grid g4">' + s + '</div>'
     c += '<div class="card"><a href="' + url_for('admin_recursos') + '" class="btn btn-sm">+ Agregar Recurso</a> <a href="' + url_for('admin_videos') + '" class="btn btn-sm">+ Agregar Video</a> <a href="' + url_for('admin_eventos') + '" class="btn btn-sm">+ Agregar Evento</a></div>'
     return render_template_string(build_page(c, data), data=data)
 
@@ -974,10 +974,10 @@ def admin_quienes_somos():
     if request.method == 'POST':
         data['quienes_somos'] = {k:request.form[k] for k in ['titulo','historia','mision','vision','objetivos']}
         save_data(data)
-        from flask import flash; flash('Informacion actualizada', 'success')
+        from flask import flash; flash('Información actualizada', 'success')
         return redirect(url_for('admin_quienes_somos'))
     q = data['quienes_somos']
-    c = '<div class="card"><h2>Editar Quienes Somos</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_quienes_somos') + '" class="active">Quienes Somos</a></div><div class="card"><form method="POST">'
+    c = '<div class="card"><h2>Editar Quiénes Somos</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_quienes_somos') + '" class="active">Quiénes Somos</a></div><div class="card"><form method="POST">'
     for k in ['titulo','historia','mision','vision','objetivos']:
         c += '<div class="form-group"><label>' + k.title() + '</label>'
         if k in ['historia','mision','vision','objetivos']:
@@ -1013,8 +1013,8 @@ def admin_recursos():
         rows += '<tr><td>' + r['titulo'] + '</td><td><span class="badge">' + r['categoria'] + '</span></td><td>' + r['fecha'] + '</td><td><a href="' + r['url'] + '" target="_blank" class="btn btn-sm">Ver</a> <form method="POST" action="' + url_for('delete_recurso', index=i) + '" style="display:inline"><button class="btn btn-sm" style="background:var(--black);border-color:var(--black)" onclick="return confirm(\'Eliminar?\')">Eliminar</button></form></td></tr>'
     
     c = '<div class="card"><h2>Gestionar Recursos</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_recursos') + '" class="active">Recursos</a></div>'
-    c += '<div class="card"><h3>Agregar Recurso</h3><form method="POST"><div class="form-group"><label>Titulo</label><input type="text" name="titulo" required></div><div class="form-group"><label>Descripcion</label><textarea name="descripcion" required></textarea></div><div class="form-group"><label>Categoria</label><select name="categoria" required>' + co + '</select></div><div class="form-group"><label>URL del PDF</label><input type="url" name="url" required></div><button type="submit" class="btn">Agregar Recurso</button></form></div>'
-    c += '<div class="card"><h3>Lista (' + str(len(data['recursos'])) + ')</h3><div class="table-responsive"><table><thead><tr><th>Titulo</th><th>Categoria</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody>' + (rows or '<tr><td colspan="4">Sin recursos</td></tr>') + '</tbody></table></div></div>'
+    c += '<div class="card"><h3>Agregar Recurso</h3><form method="POST"><div class="form-group"><label>Título</label><input type="text" name="titulo" required></div><div class="form-group"><label>Descripción</label><textarea name="descripcion" required></textarea></div><div class="form-group"><label>Categoría</label><select name="categoria" required>' + co + '</select></div><div class="form-group"><label>URL del PDF</label><input type="url" name="url" required></div><button type="submit" class="btn">Agregar Recurso</button></form></div>'
+    c += '<div class="card"><h3>Lista (' + str(len(data['recursos'])) + ')</h3><div class="table-responsive"><table><thead><tr><th>Título</th><th>Categoría</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody>' + (rows or '<tr><td colspan="4">Sin recursos</td></tr>') + '</tbody></table></div></div>'
     return render_template_string(build_page(c, data), data=data)
 
 @app.route('/admin/recursos/delete/<int:index>', methods=['POST'])
@@ -1052,8 +1052,8 @@ def admin_videos():
         rows += '<tr><td>' + v['titulo'] + '</td><td><span class="badge">' + v['categoria'] + '</span></td><td>' + v['fecha'] + '</td><td><form method="POST" action="' + url_for('delete_video', index=i) + '" style="display:inline"><button class="btn btn-sm" style="background:var(--black);border-color:var(--black)" onclick="return confirm(\'Eliminar?\')">Eliminar</button></form></td></tr>'
     
     c = '<div class="card"><h2>Gestionar Videos</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_videos') + '" class="active">Videos</a></div>'
-    c += '<div class="card"><h3>Agregar Video</h3><p style="color:var(--gray-600);margin-bottom:1rem">URL embed: https://www.youtube.com/embed/ID</p><form method="POST"><div class="form-group"><label>Titulo</label><input type="text" name="titulo" required></div><div class="form-group"><label>Descripcion</label><textarea name="descripcion" required></textarea></div><div class="form-group"><label>Categoria</label><select name="categoria" required>' + co + '</select></div><div class="form-group"><label>URL Embed</label><input type="url" name="url" required></div><button type="submit" class="btn">Agregar Video</button></form></div>'
-    c += '<div class="card"><h3>Lista (' + str(len(data['videos'])) + ')</h3><div class="table-responsive"><table><thead><tr><th>Titulo</th><th>Categoria</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody>' + (rows or '<tr><td colspan="4">Sin videos</td></tr>') + '</tbody></table></div></div>'
+    c += '<div class="card"><h3>Agregar Video</h3><p style="color:var(--gray-600);margin-bottom:1rem">URL embed: https://www.youtube.com/embed/ID</p><form method="POST"><div class="form-group"><label>Título</label><input type="text" name="titulo" required></div><div class="form-group"><label>Descripción</label><textarea name="descripcion" required></textarea></div><div class="form-group"><label>Categoría</label><select name="categoria" required>' + co + '</select></div><div class="form-group"><label>URL Embed</label><input type="url" name="url" required></div><button type="submit" class="btn">Agregar Video</button></form></div>'
+    c += '<div class="card"><h3>Lista (' + str(len(data['videos'])) + ')</h3><div class="table-responsive"><table><thead><tr><th>Título</th><th>Categoría</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody>' + (rows or '<tr><td colspan="4">Sin videos</td></tr>') + '</tbody></table></div></div>'
     return render_template_string(build_page(c, data), data=data)
 
 @app.route('/admin/videos/delete/<int:index>', methods=['POST'])
@@ -1110,8 +1110,8 @@ def admin_eventos():
         rows += '<tr><td>' + e['titulo'] + '</td><td>' + e['fecha'] + '</td><td>' + e['lugar'] + '</td><td><form method="POST" action="' + url_for('delete_evento', index=i) + '" style="display:inline"><button class="btn btn-sm" style="background:var(--black);border-color:var(--black)" onclick="return confirm(\'Eliminar?\')">Eliminar</button></form></td></tr>'
     
     c = '<div class="card"><h2>Gestionar Eventos</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_eventos') + '" class="active">Eventos</a></div>'
-    c += '<div class="card"><h3>Agregar Evento</h3><form method="POST"><div class="form-group"><label>Titulo</label><input type="text" name="titulo" required></div><div class="form-group"><label>Fecha</label><input type="text" name="fecha" placeholder="15 de Diciembre, 2024" required></div><div class="form-group"><label>Hora</label><input type="text" name="hora" placeholder="10:00 AM" required></div><div class="form-group"><label>Lugar</label><input type="text" name="lugar" required></div><div class="form-group"><label>Descripcion</label><textarea name="descripcion" required></textarea></div><div class="form-group"><label>URL (opcional)</label><input type="url" name="url"></div><button type="submit" class="btn">Agregar Evento</button></form></div>'
-    c += '<div class="card"><h3>Lista (' + str(len(data['eventos'])) + ')</h3><div class="table-responsive"><table><thead><tr><th>Titulo</th><th>Fecha</th><th>Lugar</th><th>Acciones</th></tr></thead><tbody>' + (rows or '<tr><td colspan="4">Sin eventos</td></tr>') + '</tbody></table></div></div>'
+    c += '<div class="card"><h3>Agregar Evento</h3><form method="POST"><div class="form-group"><label>Título</label><input type="text" name="titulo" required></div><div class="form-group"><label>Fecha</label><input type="text" name="fecha" placeholder="15 de Diciembre, 2024" required></div><div class="form-group"><label>Hora</label><input type="text" name="hora" placeholder="10:00 AM" required></div><div class="form-group"><label>Lugar</label><input type="text" name="lugar" required></div><div class="form-group"><label>Descripción</label><textarea name="descripcion" required></textarea></div><div class="form-group"><label>URL (opcional)</label><input type="url" name="url"></div><button type="submit" class="btn">Agregar Evento</button></form></div>'
+    c += '<div class="card"><h3>Lista (' + str(len(data['eventos'])) + ')</h3><div class="table-responsive"><table><thead><tr><th>Título</th><th>Fecha</th><th>Lugar</th><th>Acciones</th></tr></thead><tbody>' + (rows or '<tr><td colspan="4">Sin eventos</td></tr>') + '</tbody></table></div></div>'
     return render_template_string(build_page(c, data), data=data)
 
 @app.route('/admin/eventos/delete/<int:index>', methods=['POST'])
@@ -1131,10 +1131,10 @@ def admin_info():
     if request.method == 'POST':
         data['informacion'] = {k:request.form[k] for k in ['direccion','telefono','email','horario','coordinador','facebook','youtube']}
         save_data(data)
-        from flask import flash; flash('Informacion actualizada', 'success')
+        from flask import flash; flash('Información actualizada', 'success')
         return redirect(url_for('admin_info'))
     info = data['informacion']
-    c = '<div class="card"><h2>Informacion General</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_info') + '" class="active">Info</a></div><div class="card"><form method="POST">'
+    c = '<div class="card"><h2>Información General</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_info') + '" class="active">Info</a></div><div class="card"><form method="POST">'
     for k in ['direccion','telefono','email','horario','coordinador','facebook','youtube']:
         t = 'url' if k in ['facebook','youtube'] else 'email' if k == 'email' else 'text'
         c += '<div class="form-group"><label>' + k.title() + '</label><input type="' + t + '" name="' + k + '" value="' + info.get(k,'') + '" required></div>'
@@ -1151,20 +1151,20 @@ def admin_categorias():
         if action == 'add' and cat and cat not in data['categorias_recursos']:
             data['categorias_recursos'].append(cat)
             save_data(data)
-            from flask import flash; flash('Categoria agregada', 'success')
+            from flask import flash; flash('Categoría agregada', 'success')
         elif action == 'delete' and cat in data['categorias_recursos']:
             data['categorias_recursos'].remove(cat)
             save_data(data)
-            from flask import flash; flash('Categoria eliminada', 'success')
+            from flask import flash; flash('Categoría eliminada', 'success')
         return redirect(url_for('admin_categorias'))
     
     cards = ''
     for c in data['categorias_recursos']:
         cards += '<div class="resource-item"><h4>' + c + '</h4><form method="POST"><input type="hidden" name="categoria" value="' + c + '"><button type="submit" name="action" value="delete" class="btn btn-sm" style="background:var(--black);border-color:var(--black);margin-top:.5rem" onclick="return confirm(\'Eliminar?\')">Eliminar</button></form></div>'
     
-    c = '<div class="card"><h2>Gestionar Categorias</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_categorias') + '" class="active">Categorias</a></div>'
-    c += '<div class="card"><h3>Agregar Categoria</h3><form method="POST"><div class="form-group"><label>Nombre</label><input type="text" name="categoria" required></div><button type="submit" name="action" value="add" class="btn">Agregar</button></form></div>'
-    c += '<div class="card"><h3>Lista (' + str(len(data['categorias_recursos'])) + ')</h3><div class="grid">' + (cards or '<p style="text-align:center;color:var(--gray-600)">Sin categorias</p>') + '</div></div>'
+    c = '<div class="card"><h2>Gestionar Categorías</h2></div><div class="admin-nav"><a href="' + url_for('admin_dashboard') + '">Dashboard</a><a href="' + url_for('admin_categorias') + '" class="active">Categorías</a></div>'
+    c += '<div class="card"><h3>Agregar Categoría</h3><form method="POST"><div class="form-group"><label>Nombre</label><input type="text" name="categoria" required></div><button type="submit" name="action" value="add" class="btn">Agregar</button></form></div>'
+    c += '<div class="card"><h3>Lista (' + str(len(data['categorias_recursos'])) + ')</h3><div class="grid">' + (cards or '<p style="text-align:center;color:var(--gray-600)">Sin categorías</p>') + '</div></div>'
     return render_template_string(build_page(c, data), data=data)
 
 @app.route('/favicon.ico')
